@@ -1,0 +1,26 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Professore {
+  - nome : String
+  - idDocente : String
+  + Professore(nome : String, idDocente : String)
+  + getNome() : String
+  + getIdDocente() : String
+  + toString() : String
+}
+
+class Dipartimento {
+  - nomeDipartimento : String
+  - elencoProfessori : ArrayList<Professore>
+  + Dipartimento(nomeDipartimento : String)
+  + aggiungiProfessore(prof : Professore) : void
+  + rimuoviProfessore(prof : Professore) : void
+  + visualizzaElencoProfessori() : void
+  + getNumeroProfessori() : int
+}
+
+' Relazione di Aggregazione
+Dipartimento o-- "0..*" Professore
+
+@enduml
