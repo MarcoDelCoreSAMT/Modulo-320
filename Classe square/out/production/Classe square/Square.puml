@@ -1,0 +1,13 @@
+@startuml
+skinparam classAttributeIconSize 0
+class Square {
+ + Square()
+ + Square(side : Integer)
+ + getSide() : Integer
+ + setSide(side : Integer) : void
+ + getArea() : int
+ + getPerimeter() : int
+ + draw() : void
+ + getDimension() : String
+}
+@enduml
