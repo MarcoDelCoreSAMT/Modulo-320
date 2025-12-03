@@ -1,0 +1,25 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Account {
+- balance : Double
+- accountNumber : String
++ Account(accountNumber : String, balance : double, initialBalance : double)
++ deposit(double amount) : Double
++ withdraw(double amount) : Double
++ getBalance() : String
++ getAccountNumber() : String
+}
+
+class Client {
+- name : String
+- account : Account
++ Client(name : String, accountNumber : String)
++ getName() : String
++ getAccount() : String
++ addFunds(double amount) : Double
++ withdrawFunds(double amount) : Double
+}
+
+Client *-- Account
+@enduml
