@@ -1,0 +1,25 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Dipendente {
+# nome : String
+# matricola : int
+# salarioBase : double
+# pagaOraria : double
++ Dipendente (nome : String, matricola : int, salarioBase : double, pagaOraria : double)
++ calcolaStipendio() : double
+}
+
+class Tecnico extends Dipendente {
+- oreStaordinario : int
++ Tecnico(nome : String, matricola : int, salarioBase : double, oreStaordinario : double)
++ calcolaStipendioTecnico() : double
+}
+
+class Dirigente extends Dipendente {
+- bonusAnnuale : double
++ Dipendente(nome : String, matricola : int, salarioBase : double, bonusAnnuale : double)
++ calcolaStipendioDirigente() : double
+}
+
+@enduml
