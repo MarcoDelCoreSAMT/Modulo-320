@@ -1,0 +1,12 @@
+@startuml
+skinparam classAttributeIconSize 0
+class Videogioco{
+- titolo : String
+- sviluppatori : list<Sviluppatori>
+- prezzo : Float
+- stato : boolean
++ Videogioco
++
++
+}
+@enduml
