@@ -1,0 +1,31 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+abstract class Veicolo {
+# targa : String
+# modello : String
+# serbatoioLitri : double
++ Veicolo (targa : String, modello : String, serbatoioLitri : double)
++ getTarga() : String
++ getSerbatorioLitri() : String
++ getTarga() : double
+{abstract} + calcolaAutonomia() : double
+}
+
+class Automobile {
+- consumoMedio : double
++ Automobile(targa : String, modello : String, serbatoioLitri : double, consumoMedio : double)
++ getConsumoMedio() : double
++ calcolaAutonomia() : double
+}
+
+class Camion {
+- caricoTonnellate : double
++ Camion(targa : String, modello : String, serbatoioLitri : double, caricoTonnellate : double)
++ getCaricoTonnellate() : double
++ calcolaAutonomia() : double
+}
+
+Veicolo "1" o-- "1" Automobile
+Veicolo "1" o-- "1" Camion
+@enduml
