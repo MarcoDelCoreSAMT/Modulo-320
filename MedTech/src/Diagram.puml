@@ -1,0 +1,46 @@
+@startuml
+skinparam icon 0
+
+interface Emergenza{
++ PRIORITA_MASSIMA : int = 1
++ inviaAllarme(messaggio:String) : void
+}
+
+abstract MacchinarioDiagnostico{
+# codiceSeriale : String
+# annoInstallazione : int
++ MacchinarioDiagnostico(codiceSeriale : String, annoInstallazione : int)
++ getCodiceSeriale() : String
++ getAnnoInstallazione() : int
+{abstract} + eseguiScansione() : void
+}
+
+abstract DispositivoIndossabile{
+#idPaziente : String
+# livelloBatteria : int
++ DispositivoIndossabile(idPaziente : String, livelloBatteria : int)
++ getIdPaziente() : String
++ getLivelloBatteria() : int
++ setLivelloBatteria(livelloBatteria : int) : void
+{abstract} + monitoraParametri() : void
+}
+
+class RisonanzaMagnetica{
++ RisonanzaMagnetica(codiceSeriale : String, annoInstallazione : int)
++ eseguiScansione() : void
+}
+
+class DefibrillatoreSmart{
++ DefibrillatoreSmart(codiceSeriale : String, annoInstallazione : int)
++ eseguiScansione() : void
++ inviaAllarme(messaggio : String) : void
+}
+
+class SmartwatchPaziente{
++ SmartwatchPaziente(idPaziente : String, livelloBatteria : int)
++ monitoraParametri() : void
++ inviaAllarme(messaggio : String) : void
+}
+
+
+@enduml
